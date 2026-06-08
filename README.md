@@ -25,15 +25,15 @@ End-to-end customer revenue and churn analysis pipeline on **805,549 real retail
 | Champions insight | 13.2% of customers drive 55.3% of total revenue (£9.82M) |
 | At Risk segment | 880 customers with £2.22M in recoverable revenue |
 | Lost segment | 734 customers no longer active |
-| Top At Risk customer | Customer 12346 — £77,556 revenue, inactive 326 days |
+| Top At Risk customer | Customer 12346 - £77,556 revenue, inactive 326 days |
 
 ---
 
 ## Recommendations
 
-1. **Month-1 Win-Back Campaign** — 77% of customers churn after first purchase; deploy automated follow-up email with personalised offer within 7 days of first purchase
-2. **Champions Loyalty Programme** — 774 Champions generate £9.82M (55.3% of revenue); protect this segment with exclusive rewards before they become At Risk
-3. **At Risk Re-engagement** — 880 At Risk customers represent £2.22M recoverable revenue; prioritise top 20 by revenue (£548K combined) with 15% loyalty discount
+1. **Month-1 Win-Back Campaign** - 77% of customers churn after first purchase; deploy automated follow-up email with personalised offer within 7 days of first purchase
+2. **Champions Loyalty Programme** - 774 Champions generate £9.82M (55.3% of revenue); protect this segment with exclusive rewards before they become At Risk
+3. **At Risk Re-engagement** - 880 At Risk customers represent £2.22M recoverable revenue; prioritise top 20 by revenue (£548K combined) with 15% loyalty discount
 
 ---
 
@@ -52,20 +52,20 @@ End-to-end customer revenue and churn analysis pipeline on **805,549 real retail
 | Segment | Customers | Revenue | Action |
 |---|---|---|---|
 | Champions | 774 (13.2%) | £9,818,881 (55.3%) | Protect with loyalty programme |
-| Loyal | 1,285 (21.9%) | — | Upsell opportunities |
-| Potential Loyalist | 894 (15.2%) | — | Convert to Loyal |
+| Loyal | 1,285 (21.9%) | - | Upsell opportunities |
+| Potential Loyalist | 894 (15.2%) | - | Convert to Loyal |
 | At Risk | 880 (15.0%) | £2,221,679 | Win-back campaign |
-| Lost | 734 (12.5%) | — | Re-acquisition or write-off |
-| Others | 1,311 (22.3%) | — | Monitor |
+| Lost | 734 (12.5%) | - | Re-acquisition or write-off |
+| Others | 1,311 (22.3%) | - | Monitor |
 
 ---
 
 ## Cohort Analysis
 
-Monthly cohort retention tracked across 24 months (Dec 2009 – Dec 2011):
-- **Month 0 → Month 1:** 77% drop-off — critical churn window identified
+Monthly cohort retention tracked across 24 months (Dec 2009 - Dec 2011):
+- **Month 0 → Month 1:** 77% drop-off - critical churn window identified
 - **Month 1 onwards:** Retention stabilises at ~20–25%
-- **Insight:** Customers who survive past Month 1 become long-term buyers — invest in Month-1 re-engagement
+- **Insight:** Customers who survive past Month 1 become long-term buyers - invest in Month-1 re-engagement
 
 ---
 
@@ -83,9 +83,9 @@ Monthly cohort retention tracked across 24 months (Dec 2009 – Dec 2011):
 ## Feature Engineering
 
 Three RFM metrics calculated per customer from raw transactions:
-- `Recency` — days since last purchase (lower = better)
-- `Frequency` — unique invoices (higher = better)
-- `Monetary` — total revenue generated (higher = better)
+- `Recency` - days since last purchase (lower = better)
+- `Frequency` - unique invoices (higher = better)
+- `Monetary` - total revenue generated (higher = better)
 
 Each scored 1–4 using quartile-based `pd.qcut`, then combined into segments using business rules.
 
@@ -95,7 +95,7 @@ Each scored 1–4 using quartile-based `pd.qcut`, then combined into segments us
 
 - **Source:** [UCI Online Retail II Dataset](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
 - **Size:** 1,067,371 raw rows → 805,549 after cleaning
-- **Period:** December 2009 – December 2011
+- **Period:** December 2009 - December 2011
 - **Geography:** UK-based online retailer, 40+ countries
 - **Cleaning:** Removed cancellations (Invoice prefix 'C'), null CustomerIDs, zero/negative quantities
 
